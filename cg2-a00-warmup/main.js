@@ -11,6 +11,7 @@
 var makePath = function(connector){
   var path = '';
   connector = connector ? ' ' + connector + ' ': ' ';
+
   return function(arg){ //diese funktion wird komplett in "makepath" gesteckt -
                         //sie ist also die, in der die komlette Logik passiert und
                         //und die, die das argument übergeben bekommen muss
