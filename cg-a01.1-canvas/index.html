@@ -1,0 +1,128 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+*
+* JavaScript / Canvas teaching framwork
+* (C)opyright Hartmut Schirmacher, hschirmacher@beuth-hochschule.de
+* changes by Kristian Hildebrand, khildebrand@beuth-hochschule.de
+-->
+
+    <title>CG2 A1: Points, Lines, Curves &amp; Canvas</title>
+
+    <!-- import main module using RequireJS -->
+    <script data-main="app.js" src="../lib/require.js"></script>
+
+    <!-- import style sheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style/style.css">
+
+</head>
+
+<body>
+
+<!-- this element will be used to diplay errors -->
+<pre id="error"></pre>
+
+<!-- centered region with drawing canvas and parameter area -->
+<div align="center">
+    <canvas id="drawing_area" width="500" height="400" style="position:relative;">
+        <!-- NOTE: the "position:relative" is required due to the current
+implementation of mouse coordinate processing in module "util". -->
+        If you see this text, your browser probably does not support the HTML5 canvas 2D drawing context.
+    </canvas>
+
+    <div id="param_area">
+        <div id="param_left">
+
+            <h3>Create Objects:</h3>
+            <div id="objects">
+                <button id="btnNewLine" type="button">Line</button>
+                <button id="btnNewCircle" type="button">Circle</button>
+                <button id="btnNewPoint" type="button">Point</button>
+
+            </div>
+            <h3>Kd - Tree Menu</h3>
+            <div id="kd_buttons">
+                <div>
+                    visualise KdTree
+                </div>
+                <input id="visKdTree" type="checkbox"><br>
+                <button id="btnBuildKdTree" type="button">Build</button>
+                <button id="btnQueryKdTree" type="button">Query</button>
+                <br>
+                <input type="number" id="numb_of_points" value="5">
+                <button id="btn_point_list" type="button">Point List</button>
+
+            </div>
+            <h3>set Color and Stroke:</h3>
+            <div id="setter">
+                <label>Stroke</label><br>
+                <input id="stroke_input" type="number" placeholder="set Stroke">
+                <input id="setStrokeWidth" type="submit" value="Go">
+                <br>
+                <br>
+                <label>Color</label><br>
+                <input id="color_input" type="color">
+                <input id="setColor" type="submit" value="Go">
+                <br>
+
+                <div id="circle_radius_wrapper">
+                    <label>CircleRadius</label><br>
+                    <input id="circle_radius_input" type="number">
+                    <input id="setCircleRadius" type="submit" value="Go">
+                </div>
+                <br>
+                <div>
+                    <input id="p0_div">
+                </div>
+                <br>
+                <div>
+                    <input id="p1_div">
+                </div>
+                <br>
+                <div>
+                    <input id="length_div">
+                </div>
+                <br>
+            </div>
+        </div>
+        <div id="param_right">
+            <div id="setter_2">
+                <h3>parametric Curve</h3>
+                <input id="fx" type="text" placeholder="f(x)" value="150+150*Math.sin(t)">
+                <input id="fy" type="text" placeholder="f(y)" value="150+150*Math.cos(t*(t/10))">
+                <br>
+                <input id="t_min" type="number" placeholder="t_min" value="0">
+                <input id="t_max" type="number" placeholder="t_max" value="6.28">
+                <br>
+                <input id="line_segments" type="number" placeholder="line segments" value="100">
+                <input class="btn" id="set_parametric_curve" type="submit" value="Go"><br>
+                <label for="visLineSegments_parametricCurve"> LineSegments</label>
+                <input id="visLineSegments_parametricCurve" type="checkbox">
+
+                <h3>bezier Curve</h3>
+                <input id="dragger_1_x" type="text" placeholder="x" value="10">
+                <input id="dragger_1_y" type="text" placeholder="y" value="10">
+                <br>
+                <input id="dragger_2_x" type="text" placeholder="x" value="10">
+                <input id="dragger_2_y" type="text" placeholder="y" value="200">
+                <br>
+                <input id="dragger_3_x" type="text" placeholder="x" value="200">
+                <input id="dragger_3_y" type="text" placeholder="y" value="200">
+                <br>
+                <input id="dragger_4_x" type="text" placeholder="x" value="200">
+                <input id="dragger_4_y" type="text" placeholder="y" value="10">
+                <br>
+                <input id="line_segments_bez" type="text" placeholder="segments" value="100">
+                <input class="btn" id="set_bezier_curve" type="submit" value="Go"><br>
+                <label for="visLineSegments_bezierCurve"> LineSegments</label>
+                <input id="visLineSegments_bezierCurve" type="checkbox">
+
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project name="cg2-clean" default="info">
+
+	<target name="info">
+		<echo>Löscht die Daten auf den Server</echo>
+	</target>
+
+	<delete dir="/Applications/XAMPP/xamppfiles/htdocs/cg2/"/>
+	
+	<tstamp>
+		<format property="TIME" pattern="hh:mm:ss dd-MM-yyyy" locale="de,DE"/>
+	</tstamp>
+	<echo>Time: ${TIME}</echo>
+</project>
